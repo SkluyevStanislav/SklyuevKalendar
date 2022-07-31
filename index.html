@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="container">
+    
+    <header class="header">
+      <div class="header__conteiner">
+        <div class="header__control">
+          <div class="header__control-buttons">
+            <div id="open_pop_up" class="header__main-button">Добавить</div>
+            <div class="header__main-button">Обновить</div>
+          </div>
+          <div class="header__input-area">
+            <img class="header__icon" src="img/header-icon.svg" alt="ошибка">
+            <input class="header__input" type="text" placeholder="Поиск">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Основная часть -->
+    <main class="main">
+      <div class="main__conteiner">
+        <div class="main__bottom-row" id="header">
+          <div class="main__month-control">
+            <button class="main__button main-img-1" id="backButton"><img src="img/main-icon.svg" alt=""></button>
+            <div class="main__text" id="monthDisplay"></div>
+            <button class="main__button main-img-2" id="nextButton"><img src="img/main-icon.svg" alt=""></button>
+          </div>
+          <div class="main__extra-button">Сегодня</div>
+        </div>
+        <!-- Всплывающее окно быстрого добавления -->
+        <div id="fast__popup" class="fast__popup">
+        
+          <img  class="fast-decorate" src="img/fast-decorate.svg" alt="ошибка">
+          <div class="fast-popup__conteiner">
+              <div class="conteiner__frame-1"> 
+                  <img id="fast-popup-clouse" class="fast-popup-clouse" src="img/clouse.svg" alt="ошибка">
+              </div>
+              <input class="conteiner__frame-2" placeholder="Дата, событие">
+              <div class="conteiner__frame-3">
+                  <div class="fast-extra-button">
+                      Отправить
+                  </div>
+              </div>
+      
+          </div>
+      </div>
+        <!-- Сам календар -->
+        <div class="table">
+          <div id="weekdays">
+            <div>Понедельник</div>
+            <div>Вторник</div>
+            <div>Среда</div>
+            <div>Четверг</div>
+            <div>Пятница</div>
+            <div>Суббота</div>
+            <div>Воскресенье</div>
+          </div>
+
+          <div id="calendar"></div>
+
+          <!-- попап добавления -->
+          <div id="newEventModal" class="key-popup">
+            <div class="key-popup-blok-1">
+              <img id="cancelButton" class="fast-popup-clouse" src="img/clouse.svg" alt="ошибка">
+            </div>
+            <input id="eventTitleInput" class="key-popup-blok-2 key-item-1" type="text" placeholder="Событие">
+            <input id="eventTitleInput2" class="key-popup-blok-2 key-item-2" type="text" placeholder="День, месяц">
+            <div class="key-blok-3">
+              <input id="eventTitleInput3" class="key-popup-blok-2 key-item-3" type="text" placeholder="Имена участников">
+            </div>
+            <textarea id="eventTitleInput4" class="key-popup-blok-2 key-item-4" type="text" placeholder="Описание"></textarea>
+            <div class="key-popup-blok-3">
+              <div id="saveButton" class="key-extra-button">
+                Готово
+              </div>
+              <div id="cancelButton2" class="key-extra-button">
+                Удалить
+              </div>
+            </div>
+          </div>
+          <!-- попап редактирования -->
+          <div class="key-popup" id="deleteEventModal">
+
+            <div class="key-popup-blok-1">
+              <img id="closeButton" class="fast-popup-clouse" src="img/clouse.svg" alt="ошибка">
+            </div>
+            <div id="eventText" class="key-popup-okno key-item-1"> 
+            </div>
+            <textarea class="key-popup-blok-2 key-item-4" type="text" placeholder="Описание"></textarea>
+            <div class="key-popup-blok-3">
+              <div id="saveButton2" class="key-extra-button">
+                Готово
+              </div>
+              <div id="deleteButton" class="key-extra-button">
+                Удалить
+              </div>
+            </div>
+          </div>
+
+          <div id="modalBackDrop"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
